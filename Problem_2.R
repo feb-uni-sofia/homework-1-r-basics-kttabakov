@@ -1,3 +1,6 @@
+
+## NOTE: readability: leave some blank linkes between the code to make it more readable
+
 # a)
 xmin <- c(23.0, 20.5, 28.2, 20.3, 22.4, 17.2, 18.2)
 xmax <- c(25.0, 22.8, 31.2, 27.3, 28.4, 20.2, 24.1)
@@ -16,10 +19,12 @@ names(xmax) <- c('Mon', 'Tue', 'Wed', 'Thu', 'Fri' , 'Sat' , 'Sun')
 # g)
 temperature <- data.frame(xmin,xmax)
 # h)
-temperature <- within(temperature,{xminFahrenheit <- xmin*9/5 + 32})
+temperature <- within(temperature, {
+	xminFahrenheit <- xmin*9/5 + 32
+})
 #i)
 ftemp <- data.frame(
-  Max_temp_Fahr = xmax*9/5 + 32 , 
+  Max_temp_Fahr = xmax*9/5 + 32, 
   Min_temp_Fahr = xmin*9/5 + 32)
 # j)
 FivedaytempFahrenheit  <- data.frame(
@@ -28,4 +33,9 @@ FivedaytempFahrenheit  <- data.frame(
 FivedaytempFahrenheit <- data.frame(
   Max_temp_Fahr = xmax[seq(length(xmax)-2)]*9/5+32 ,
   Min_temp_Fahr = xmin[seq(length(xmin)-2)]*9/5+32)
+
+## Too verbose, look at a better solution
+
+ftemp[1:5, ]
+ftemp[-(6:7), ]
 
